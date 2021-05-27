@@ -26,7 +26,7 @@ public class StudentResource {
 	public void Insert(@Context HttpServletRequest request,@Context HttpServletResponse response) throws IOException, ServletException {
 		Student student = new Student(request.getParameter("usn"),request.getParameter("firstname"),request.getParameter("lastname"));
 		StudentService.Insert(student);
-		response.sendRedirect("showdata");
+		response.sendRedirect("../showdata");
 	}
 		
 	@POST
@@ -53,7 +53,7 @@ public class StudentResource {
 	@Path("/showdata")
 	public void Show(@Context HttpServletRequest request,@Context HttpServletResponse response) throws IOException, ServletException {
 		
-		request.setAttribute("allContacts", StudentService.Show());
-		request.getRequestDispatcher("/home.jsp").forward(request, response);
+		request.setAttribute("StudInfo", StudentService.Show());
+		request.getRequestDispatcher("/viewstudents.jsp").forward(request, response);
 	}
 }
