@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Delete student</title>
 </head>
 <body>
+<form name="deleteinformation" action="<%=request.getContextPath()%>/student//deletedata/{usn}" method="POST">
+	 <label for="usn">USN:</label><br>
+     <input type="text" name="usn"><br>
+     <input type="submit" value="Submit">
+</form>
 
 </body>
 </html>

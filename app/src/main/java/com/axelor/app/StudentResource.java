@@ -29,7 +29,7 @@ public class StudentResource {
 		response.sendRedirect("showdata");
 	}
 	
-	@GET             
+	/*@GET             
 	@Path("/getData/{usn}")
 	public void getData(@PathParam("usn") String usn, @Context HttpServletRequest request, @Context HttpServletResponse response)  throws IOException, ServletException {
 		 
@@ -37,15 +37,18 @@ public class StudentResource {
 		request.setAttribute("firstname", StudentService.getData(usn).get(0).getFirstName());
 		request.setAttribute("lastname", StudentService.getData(usn).get(0).getLastName());
 		request.getRequestDispatcher("../../updateStudent.jsp").forward(request, response);
-	}
+	}*/
 	
 	@POST
 	@Path("/deletedata/{usn}")
-	public void Delete(@PathParam("usn") String usn, @Context HttpServletRequest request,@Context HttpServletResponse response) {
+	public void Delete(@PathParam("usn") String usn, @Context HttpServletRequest request,@Context HttpServletResponse response) throws IOException, ServletException {
 		try {
 			StudentService.Delete(usn);
 		}catch (Exception e) {
 			e.printStackTrace();
+		}
+		finally {
+			response.sendRedirect("showdata");
 		}
 	}
 	

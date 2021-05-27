@@ -7,7 +7,6 @@
 <body>  
 <h1>Student Information</h1>  
 <a href="addstudent.jsp">Add Student</a>  
-<a href="getstudent.jsp">Get Student</a> 
 <a href="updatestudent.jsp">Update Student</a> 
 <a href="deletestudent.jsp">Delete Student</a> 
 <a href="viewstudents.jsp">View all Students</a>  
