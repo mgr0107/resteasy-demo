@@ -25,17 +25,6 @@ public class StudentServiceImplementation implements StudentService{
 	
 	@Override
 	@Transactional(rollbackOn = IOException.class)
-	public ArrayList<Student> getData (String usn) {
-	
-		ArrayList<Student> stud = new ArrayList<>();
-		try {
-			stud = (ArrayList<Student>)em.createQuery("select s from Student s where s.usn = :usn",Student.class).setParameter("usn", usn).getResultList();
-		}catch (Exception e) {}
-		return stud;
-	}
-	
-	@Override
-	@Transactional(rollbackOn = IOException.class)
 	public void Update(String usn, String firstname, String lastname) {
 		
 		try {

@@ -9,8 +9,6 @@ public interface StudentService {
 	
 	public void Insert(Student c) throws IOException;
 	
-	public ArrayList<Student> getData(String usn);
-	
 	public void Update(String usn, String firstName, String lastName) throws IOException;
 	
 	public void Delete(String usn) throws IOException;

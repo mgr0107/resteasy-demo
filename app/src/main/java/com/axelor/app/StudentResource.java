@@ -28,38 +28,24 @@ public class StudentResource {
 		StudentService.Insert(student);
 		response.sendRedirect("showdata");
 	}
-	
-	/*@GET             
-	@Path("/getData/{usn}")
-	public void getData(@PathParam("usn") String usn, @Context HttpServletRequest request, @Context HttpServletResponse response)  throws IOException, ServletException {
-		 
-		request.setAttribute("usn", StudentService.getData(usn).get(0).getUsn());
-		request.setAttribute("firstname", StudentService.getData(usn).get(0).getFirstName());
-		request.setAttribute("lastname", StudentService.getData(usn).get(0).getLastName());
-		request.getRequestDispatcher("../../updateStudent.jsp").forward(request, response);
-	}*/
-	
+		
 	@POST
 	@Path("/deletedata/{usn}")
 	public void Delete(@PathParam("usn") String usn, @Context HttpServletRequest request,@Context HttpServletResponse response) throws IOException, ServletException {
 		try {
 			StudentService.Delete(usn);
+			response.sendRedirect("../showdata");
 		}catch (Exception e) {
 			e.printStackTrace();
-		}
-		finally {
-			response.sendRedirect("showdata");
-		}
+		}		
 	}
-	
-	
 	
 	@GET
 	@Path("/updatedata/{usn}")
-	public void Update(@PathParam("usn") Integer usn, @Context HttpServletRequest request, @Context HttpServletResponse response) throws IOException, ServletException { 
-		String firstname=request.getParameter("firstname");
-		String lastname=request.getParameter("lastname");
-		StudentService.Update("usn",firstname,lastname);
+	public void Update(@PathParam("usn") String usn, @Context HttpServletRequest request, @Context HttpServletResponse response) throws IOException, ServletException { 
+		String firstname = request.getParameter("firstname");
+		String lastname = request.getParameter("lastname");
+		StudentService.Update(usn,firstname,lastname);
 		response.sendRedirect("../showdata");
 	}
 	

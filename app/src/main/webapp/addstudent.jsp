@@ -7,7 +7,7 @@
 <title>Insert student</title>
 </head>
 <body>
-<h1>Insert Student details below</h1>
+<h3>Insert Student details below</h3>
 	<form name="studentinformation" action="<%=request.getContextPath()%>/student/insertdata" method="POST">
 	 <label for="usn">USN:</label><br>
      <input type="text" name="usn"><br>
