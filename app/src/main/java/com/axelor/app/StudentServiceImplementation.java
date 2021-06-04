@@ -19,8 +19,11 @@ public class StudentServiceImplementation implements StudentService{
 	@Override
 	@Transactional(rollbackOn =IOException.class)
 	public void insert(Student student) throws IOException {
+        System.out.println("debug2");
 		EntityManager em = emp.get(); //creating instance of EntityManager
+		System.out.println("debug3");
 		em.persist(student);
+		System.out.println("debug4");
 	}
 	
 	@Override
@@ -30,7 +33,7 @@ public class StudentServiceImplementation implements StudentService{
 		Student student = em.find(Student.class, s.getUsn());
 		student.setFirstName(s.getFirstName());
 		student.setLastName(s.getLastName());
-		student.setPhoneno(s.getPhoneno());
+		
 	}
 	
 	@Override
@@ -43,11 +46,15 @@ public class StudentServiceImplementation implements StudentService{
 	
 	@Override
 	@Transactional(rollbackOn =IOException.class)
-    public ArrayList<Student> getStudentById(String usn){
+    public ArrayList<String> getStudentById(String usn){
 		EntityManager em = emp.get();
-		ArrayList<Student> stud = new ArrayList<>();
+		ArrayList<String> stud = new ArrayList<>();
 		Student s = em.find(Student.class, usn);
-		stud.add(s);
+		stud.add(s.getUsn());
+		stud.add(s.getFirstName());
+		stud.add(s.getLastName());
+		
+		System.out.println(stud);
 		return stud;
 	}
 

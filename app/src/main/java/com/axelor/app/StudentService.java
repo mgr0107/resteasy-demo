@@ -9,7 +9,7 @@ public interface StudentService {
 	
 	public void insert(Student c) throws IOException;
 	
-	public ArrayList<Student> getStudentById(String usn);
+	public ArrayList<String> getStudentById(String usn);
 	
 	public void update(Student s) throws IOException;
 	
