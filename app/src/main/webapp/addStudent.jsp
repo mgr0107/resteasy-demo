@@ -4,18 +4,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>update student</title>
+<title>Insert student</title>
 </head>
 <body>
-<h3>Update student information</h3>
-  <form name="studentinformation" action="<%=request.getContextPath()%>/student/updatedata/{usn}" method="POST">
+<h3>Insert Student details below</h3>
+	<form name="studentinformation" action="<%=request.getContextPath()%>/student/insertdata" method="POST">
 	 <label for="usn">USN:</label><br>
      <input type="text" name="usn"><br>
 	 <label for="fname">First name:</label><br>
      <input type="text" name="firstname"><br>
      <label for="lname">Last name:</label><br>
-     <input type="text" name="lastname">
+     <input type="text" name="lastname"> <br>
+     <label for="phno">Phone Number:</label><br>
+     <input type="text" name="phoneno"><br>
      <input type="submit" value="Submit">
+     
 	</form>
 
 </body>

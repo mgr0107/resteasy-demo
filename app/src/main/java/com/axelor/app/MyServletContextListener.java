@@ -18,12 +18,12 @@ public class MyServletContextListener extends GuiceResteasyBootstrapServletConte
     @Override
     protected List<? extends com.google.inject.Module> getModules(ServletContext context) //sends and recieves request
     {
-        return Arrays.asList(new JpaPersistModule("studentinfo"), new StudentModule()); //telling guice persist which persistence unit will be used
+        return Arrays.asList(new JpaPersistModule("studentinfo"), new StudentModule()); //telling guice persist which persistence unit will be used //new StudentModule() tells guice to refer to StudentModule for bindings
     }
     
     @Override
     public void withInjector(Injector injector)
     {
-        injector.getInstance(PersistService.class).start(); //starts entity manager
+        injector.getInstance(PersistService.class).start(); //At this point JPA is started and is ready
     }
 }

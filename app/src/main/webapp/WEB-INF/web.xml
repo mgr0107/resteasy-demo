@@ -2,7 +2,7 @@
 
 	 <listener>
       <listener-class>
-         MyServletContextListener
+         com.axelor.app.MyServletContextListener
       </listener-class>
    </listener>
 

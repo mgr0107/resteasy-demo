@@ -7,12 +7,14 @@ import com.axelor.student.db.Student;
 
 public interface StudentService {
 	
-	public void Insert(Student c) throws IOException;
+	public void insert(Student c) throws IOException;
 	
-	public void Update(String usn, String firstName, String lastName) throws IOException;
+	public ArrayList<Student> getStudentById(String usn);
 	
-	public void Delete(String usn) throws IOException;
+	public void update(Student s) throws IOException;
 	
-	 public ArrayList<Student> Show();
+	public void deleteById(String usn) throws IOException;
+	
+	 public ArrayList<Student> show();
 	
 }

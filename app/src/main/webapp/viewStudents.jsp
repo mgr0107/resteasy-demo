@@ -16,6 +16,7 @@
    <th>USN</th>
    <th>First name</th>
    <th>Last Name</th>
+   <th>Phone No</th>
   </tr>
   <% 
 							if(request.getAttribute("StudInfo")!=null) {
@@ -34,6 +35,10 @@
 									
 									out.print("<td>");
 									out.print(s.getLastName());
+									out.print("</td>");
+									
+									out.print("<td>");
+									out.print(s.getPhoneno());
 									out.print("</td>");
 									
 									out.print("</tr>");
