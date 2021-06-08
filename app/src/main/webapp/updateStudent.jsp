@@ -9,8 +9,8 @@
 <body>
 <h3>Update student information</h3>
   <form name="studentinformation" action="<%=request.getContextPath()%>/student/updatedata" method="POST">
-	 <label for="usn">USN:</label><br>
-     <input type="text" name="usn"><br>
+	 <label for="id">ID:</label><br>
+     <input type="number" name="id"><br>
 	 <label for="fname">First name:</label><br>
      <input type="text" name="firstname"><br>
      <label for="lname">Last name:</label><br>

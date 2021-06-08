@@ -1,5 +1,6 @@
 package com.axelor.student.db;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,37 +10,35 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 public class Student {
-	
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY )
-	private String usn;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
 	@NotNull
 	private String firstName;
 	@NotNull
 	private String lastName;
-	
-	@OneToOne
+
+	@OneToOne(cascade = CascadeType.ALL)
 	private Phone ph;
 
 	public Student() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-	
-	public Student(String usn, @NotNull String firstName, @NotNull String lastName, Phone ph) {
+
+	public Student(String firstName, String lastName, Phone ph) {
 		super();
-		this.usn = usn;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.ph = ph;
 	}
 
-	public String getUsn() {
-		return usn;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setUsn(String usn) {
-		this.usn = usn;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getFirstName() {
@@ -68,11 +67,7 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return "Student [usn=" + usn + ", firstName=" + firstName + ", lastName=" + lastName + ", ph=" + ph + "]";
+		return "Student [usn=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", ph=" + ph + "]";
 	}
-	
-		
-	}
-	
-	
 
+}

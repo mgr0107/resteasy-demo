@@ -9,14 +9,16 @@
 <body>
 <h3>Insert Student details below</h3>
 	<form name="studentinformation" action="<%=request.getContextPath()%>/student/insertdata" method="POST">
-	 <label for="usn">USN:</label><br>
-     <input type="text" name="usn"><br>
+	
 	 <label for="fname">First name:</label><br>
      <input type="text" name="firstname"><br>
+     
      <label for="lname">Last name:</label><br>
      <input type="text" name="lastname"> <br>
+     
      <label for="phno">Phone Number:</label><br>
      <input type="text" name="phoneno"><br>
+     
      <input type="submit" value="Submit">
      
 	</form>

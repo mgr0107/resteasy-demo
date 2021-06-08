@@ -9,8 +9,9 @@
 <body>
 <h3>Delete Student Information</h3>
 <form name="deleteinformation" action="<%=request.getContextPath()%>/student/deletedata" method="POST">
-	 <label for="usn">USN:</label><br>
-     <input type="text" name="usn"><br>
+	 <label for="id">ID:</label><br>
+     <input type="text" name="id"><br>
+     
      <input type="submit" value="Submit">
 </form>
 

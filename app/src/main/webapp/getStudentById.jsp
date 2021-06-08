@@ -9,8 +9,8 @@
 <body>
 <h3>Get Student By USN</h3>
 <form name="getinformation" action="<%=request.getContextPath()%>/student/getStudentById" method="GET">
-	 <label for="usn">USN:</label><br>
-     <input type="text" name="usn"><br>
+	 <label for="id">ID:</label><br>
+     <input type="number" name="id"><br>
      <input type="submit" value="Submit">
 </form>
 

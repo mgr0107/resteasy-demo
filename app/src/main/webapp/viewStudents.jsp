@@ -26,7 +26,7 @@
 									out.print("<tr>");
 									
 									out.print("<td>");
-									out.print(s.getUsn());
+									out.print(s.getId());
 									out.print("</td>");
 								
 									out.print("<td>");
@@ -38,7 +38,7 @@
 									out.print("</td>");
 									
 									out.print("<td>");
-									out.print(s.getPhoneno());
+									out.print(s.getPh().getPhoneNo());
 									out.print("</td>");
 									
 									out.print("</tr>");

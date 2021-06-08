@@ -4,35 +4,40 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
 @Entity
 public class Phone {
-	
+
 	@Id
-	private String phno;
-	private String isp;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
+	private String phoneNo;
+
+	// constructors
 	public Phone() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-	public Phone(String phno, String isp) {
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Phone(String phoneNo) {
 		super();
-		this.phno = phno;
-		this.isp = isp;
+		this.phoneNo = phoneNo;
 	}
-	public String getPhno() {
-		return phno;
+
+	// Getter and setters
+	public String getPhoneNo() {
+		return phoneNo;
 	}
-	public void setPhno(String phno) {
-		this.phno = phno;
+
+	public void setPhoneNo(String phoneNo) {
+		this.phoneNo = phoneNo;
 	}
-	public String getIsp() {
-		return isp;
-	}
-	public void setIsp(String isp) {
-		this.isp = isp;
-	}
-	
-	
+
 }

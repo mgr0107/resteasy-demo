@@ -6,15 +6,15 @@ import java.util.ArrayList;
 import com.axelor.student.db.Student;
 
 public interface StudentService {
-	
+
 	public void insert(Student c) throws IOException;
-	
+
 	public ArrayList<String> getStudentById(String usn);
-	
+
 	public void update(Student s) throws IOException;
-	
-	public void deleteById(String usn) throws IOException;
-	
-	 public ArrayList<Student> show();
-	
+
+	public ArrayList<Student> show();
+
+	void deleteById(Integer id) throws IOException;
+
 }
