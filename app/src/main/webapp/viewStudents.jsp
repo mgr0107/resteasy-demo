@@ -18,6 +18,7 @@
    <th>Last Name</th>
    <th>Phone No</th>
   </tr>
+  
   <% 
 							if(request.getAttribute("StudInfo")!=null) {
 								List<Student> student= (ArrayList<Student>)request.getAttribute("StudInfo");

@@ -39,11 +39,14 @@ public class StudentResource {
 	@Path("/updatedata")
 	public void Update(@Context HttpServletRequest request, @Context HttpServletResponse response)
 			throws IOException, ServletException {
-		String usn = request.getParameter("usn");
+		String usn = request.getParameter("id");
 		String firstname = request.getParameter("firstname");
 		String lastname = request.getParameter("lastname");
-		Student st = new Student(firstname, lastname, null);
-		StudentService.update(st);
+		String phno = request.getParameter("phoneno");
+		Phone ph = new Phone(phno);
+		Student st = new Student(firstname, lastname, ph);
+		//System.out.println("pt1");
+		StudentService.update(Integer.parseInt(usn), st);
 		response.sendRedirect(request.getContextPath() + "/student/showdata");
 	}
 
@@ -64,22 +67,12 @@ public class StudentResource {
 	@Path("/getStudentById")
 	public void getStudentById(@Context HttpServletRequest request, @Context HttpServletResponse response)
 			throws IOException, ServletException {
-		System.out.println("debug");
-		String usn = request.getParameter("usn");
-		ArrayList<String> stud = StudentService.getStudentById(usn);
-		/*
-		 * request.setAttribute("usn",
-		 * StudentService.getStudentById(usn).get(0).getUsn());
-		 * request.setAttribute("firstname",
-		 * StudentService.getStudentById(usn).get(0).getFirstName());
-		 * request.setAttribute("lastname",
-		 * StudentService.getStudentById(usn).get(0).getLastName());
-		 * request.setAttribute("phoneno",
-		 * StudentService.getStudentById(usn).get(0).getPhoneno());
-		 */
-		System.out.println("debug2");
-		// System.out.println;
-		// response.sendRedirect(request.getContextPath() + "/student/showdata");
+		String id = request.getParameter("id");
+		ArrayList<Student> stud = StudentService.getStudentById(id);
+		System.out.println(stud);
+		//response.sendRedirect(request.getContextPath() + "/student/showdata");
+		request.setAttribute("StudInfo", stud);
+		request.getRequestDispatcher("/viewStudents.jsp").forward(request, response);
 	}
 
 	@GET

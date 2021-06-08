@@ -9,7 +9,7 @@
 <a href="addStudent.jsp">Add Student</a>  
 <a href="updateStudent.jsp">Update Student</a> 
 <a href="deleteStudent.jsp">Delete Student</a> 
-<a href="viewStudents.jsp">View all Students</a>  
+<a href="<%=request.getContextPath()%>/student/showdata">View all Students</a>  
 <a href="getStudentById.jsp">Get student by id</a> 
   
 </body>  

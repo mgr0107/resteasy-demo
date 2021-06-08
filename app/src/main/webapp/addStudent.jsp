@@ -9,7 +9,7 @@
 <body>
 <h3>Insert Student details below</h3>
 	<form name="studentinformation" action="<%=request.getContextPath()%>/student/insertdata" method="POST">
-	
+
 	 <label for="fname">First name:</label><br>
      <input type="text" name="firstname"><br>
      

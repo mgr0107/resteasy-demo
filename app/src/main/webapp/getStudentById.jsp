@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>Get Student By USN</h3>
+<h3>Get Student By ID</h3>
 <form name="getinformation" action="<%=request.getContextPath()%>/student/getStudentById" method="GET">
 	 <label for="id">ID:</label><br>
      <input type="number" name="id"><br>

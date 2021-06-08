@@ -5,6 +5,7 @@ import javax.persistence.EntityManager;
 import java.io.*;
 import java.util.*;
 
+import com.axelor.student.db.Phone;
 import com.axelor.student.db.Student;
 import com.google.inject.*;
 import com.google.inject.persist.Transactional;
@@ -24,11 +25,12 @@ public class StudentServiceImplementation implements StudentService {
 
 	@Override
 	@Transactional(rollbackOn = IOException.class)
-	public void update(Student s) {
+	public void update(Integer id, Student s) {
 		EntityManager em = emp.get();
-		Student student = em.find(Student.class, s.getId());
+		Student student = em.find(Student.class, id);
 		student.setFirstName(s.getFirstName());
 		student.setLastName(s.getLastName());
+		student.setPh(s.getPh());
 
 	}
 
@@ -42,13 +44,13 @@ public class StudentServiceImplementation implements StudentService {
 
 	@Override
 	@Transactional(rollbackOn = IOException.class)
-	public ArrayList<String> getStudentById(String id) {
+	public ArrayList<Student> getStudentById(String id) {
 		EntityManager em = emp.get();
-		Student student = em.find(Student.class, id);
-		ArrayList<String> studentList = new ArrayList<>();
-		studentList.add(student.getId().toString());
-		studentList.add(student.getFirstName());
-		studentList.add(student.getLastName());
+		System.out.println("debug1");
+		Student student = em.find(Student.class, Integer.parseInt(id));
+		System.out.println(student);
+		ArrayList<Student> studentList = new ArrayList<>();
+		studentList.add(student);
 		return studentList;
 	}
 
